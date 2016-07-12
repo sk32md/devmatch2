@@ -12,6 +12,9 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 3.3.6'
+#Use bootstrap library for styles
+
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
