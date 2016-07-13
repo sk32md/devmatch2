@@ -1,4 +1,4 @@
-class CreateContacts < ActiveRecord::Migration
+class Create Contacts < ActiveRecord::Migration
   def change
     create_table :contacts do |t|
       t.string :name
