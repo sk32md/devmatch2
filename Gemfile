@@ -59,7 +59,7 @@ group :development do
   gem 'devise', '~> 3.4.1'
   # Use stripe for handling all payments
   gem 'stripe', '~> 1.48'
-  
+  # Use figaro to hide secret keys
   gem 'figaro', '~> 1.1', '>= 1.1.1'
   
 end
