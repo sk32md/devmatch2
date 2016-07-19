@@ -1,5 +1,5 @@
 $(document).ready(function() {      //The .ready just means that the document will get loaded before teh JS runs
-    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));    //Lets grab generic meta tag contents. We can use it because we loaded the JS Stripe file
+    Stripe.setPublishableKey($('meta[name="stripe_key"]').attr('content'));    //Lets grab generic meta tag contents. We can use it because we loaded the JS Stripe file
     // Watch for a form submission:
     $("#form-submit-btn").click(function(event) {  //When the user clicks on submit, we add an event listener to "next line"
         event.preventDefault();  //Dont send anything to the server just yet
