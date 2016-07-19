@@ -1,14 +1,15 @@
+/* global $ */
 $(document).ready(function() {      //The .ready just means that the document will get loaded before teh JS runs
-    Stripe.setPublishableKey($('meta[name="stripe_key"]').attr('content'));    //Lets grab generic meta tag contents. We can use it because we loaded the JS Stripe file
+    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));    //Lets grab generic meta tag contents. We can use it because we loaded the JS Stripe file
     // Watch for a form submission:
     $("#form-submit-btn").click(function(event) {  //When the user clicks on submit, we add an event listener to "next line"
         event.preventDefault();  //Dont send anything to the server just yet
         $('input[type=submit]').prop('disabled', true);  //This disables the button
         var error = false;  //establishing a variable false
         var ccNum = $('#card-number').val(),  //storing variables
-            cvcNum = $('card_code').val(),
-            expMonth = $('card_month').val(),
-            expYear = $('card_year').val();
+            cvcNum = $('#card_code').val(),
+            expMonth = $('#card_month').val(),
+            expYear = $('#card_year').val();
             
         if (!error) {   //if there are no errors
             //Get the Stripe token:

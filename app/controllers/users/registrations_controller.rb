@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController  #given to us by Devise
-    
+    #creating a class Users and inheriting devise
     def create  #When the user submits their form
        super do |resource| #importing to create action code that is inside the devise gem
           if params[:plan] #when user submits basic or pro form
