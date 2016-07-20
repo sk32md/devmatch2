@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
+  has_one :profile
   attr_accessor :stripe_card_token #stripe_card_token hidden field value
   
   def save_with_payment #method used in /app/controllers/users/registrations_controller.rb

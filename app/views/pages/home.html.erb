@@ -1,3 +1,8 @@
+<%= link_to "Create your profile!.", new_user_profile_path(current_user) if current_user%>
+<!--current_user is available from devise gem and sets user_id: dynamiclylinkedcurrentuserthatsloggedin-->
+<!--new_user_profile is available from the routes.rb when you bundle exec rake routes-->
+<!--if current_user means if the user is logged in-->
+
 <div class="jumbotron text-center">
     <h1>Welcome to Devmatch</h1>
     <h3>This is a site im making from a tutorial for developers to socialize</h3>
