@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  resources :users do
+    resource :profile
+  end #This is a nested profile behind a user
   resources :contacts
   get '/about' => 'pages#about'
   root 'pages#home'
