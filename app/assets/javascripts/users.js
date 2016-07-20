@@ -36,4 +36,4 @@ $(document).ready(function() {      //The .ready just means that the document wi
         //Submit the form:
         f.get(0).submit(); //f.get(0) means we only want to the first forn incase there are multiple forms returned and submit
     }
-})
+});
