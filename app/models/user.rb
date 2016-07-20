@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   
   def save_with_payment #method used in /app/controllers/users/registrations_controller.rb
     if valid? #If user filled out form properly
-      customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
+      customer = Stripe::Customer.create(description: email, plan: plan_id, source: stripe_card_token)
       self.stripe_customer_token = customer.id #setting property of user to user id returned from stripe
       save! #saving entire user object to database by creating new migration file
     end

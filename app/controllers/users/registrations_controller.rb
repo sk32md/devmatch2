@@ -1,5 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController  #given to us by Devise
     #creating a class Users and inheriting devise
+    before_filter :select_plan, only: :new
+    #define select_plan function below in a private file gx 
+    
+    
     def create  #When the user submits their form
        super do |resource| #importing to create action code that is inside the devise gem
           if params[:plan] #when user submits basic or pro form
@@ -13,4 +17,14 @@ class Users::RegistrationsController < Devise::RegistrationsController  #given t
        end
     end
     
+    private
+        def select_plan
+            unless params[:plan] && (params[:plan] == '1' || params[:plan] == '2' )
+            #unless the user comes from a button with value 1 or 2
+            flash[:notice] = "Please select a membership plan to sign up."
+            #if the value is not 1 or 2 flash this notice to the user
+            redirect_to root_url
+            #and redirect them to the root url
+            end
+        end 
 end
